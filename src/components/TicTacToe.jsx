@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Board from "./Board";
 import GameOver from "./GameOver";
 import GameState from "./GameState.js";
+import Reset from "./Reset.jsx";
 
 function TicTacToe() {
   const [tiles, setTiles] = useState(Array(9).fill(null));
@@ -80,6 +81,13 @@ function TicTacToe() {
     checkWinner(tiles, setStrikeClass, setGameState);
   }, [tiles]);
 
+  const handleReset = () => {
+    setGameState(GameState.inProgress);
+    setTiles(Array(9).fill(null));
+    setPlayerTurn(PLAYER_X);
+    setStrikeClass("");
+  };
+
   return (
     <div>
       <h1>Tic Tac Toe</h1>
@@ -91,6 +99,9 @@ function TicTacToe() {
       ></Board>
       {/* For the board component, we are sending over the method that handles what happens when clicked, and the tiles state  */}
       <GameOver gameState={gameState} />
+      <Reset gameState={gameState} onReset={handleReset}>
+        {" "}
+      </Reset>
     </div>
   );
 }
