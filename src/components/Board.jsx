@@ -1,7 +1,7 @@
 import Strike from "./Strike";
 import Tile from "./Tile";
 
-function Board({ tiles, onTileClick, playerTurn }) {
+function Board({ tiles, onTileClick, playerTurn, strikeClass }) {
   return (
     <div className="board">
       {/* Each tile shares these attributes:
@@ -82,7 +82,7 @@ function Board({ tiles, onTileClick, playerTurn }) {
         value={tiles[8]}
         className="  "
       />
-      <Strike />
+      <Strike strikeClass={strikeClass} />
     </div>
   );
 }
