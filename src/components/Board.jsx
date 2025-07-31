@@ -1,7 +1,7 @@
 import Strike from "./Strike";
 import Tile from "./Tile";
 
-function Board({ tiles, onTileClick }) {
+function Board({ tiles, onTileClick, playerTurn }) {
   return (
     <div className="board">
       {/* Each tile shares these attributes:
@@ -9,8 +9,9 @@ function Board({ tiles, onTileClick }) {
       - className which is used as a CSS selector 
       
       there are 9 tiles*/}
-      
+
       <Tile
+        playerTurn={playerTurn}
         onClick={() => {
           onTileClick(0);
         }}
@@ -18,6 +19,7 @@ function Board({ tiles, onTileClick }) {
         className="right-border bottom-border "
       />
       <Tile
+        playerTurn={playerTurn}
         onClick={() => {
           onTileClick(1);
         }}
@@ -25,6 +27,7 @@ function Board({ tiles, onTileClick }) {
         className="right-border bottom-border "
       />
       <Tile
+        playerTurn={playerTurn}
         onClick={() => {
           onTileClick(2);
         }}
@@ -32,6 +35,7 @@ function Board({ tiles, onTileClick }) {
         className="bottom-border "
       />
       <Tile
+        playerTurn={playerTurn}
         onClick={() => {
           onTileClick(3);
         }}
@@ -39,6 +43,7 @@ function Board({ tiles, onTileClick }) {
         className="right-border  bottom-border "
       />
       <Tile
+        playerTurn={playerTurn}
         onClick={() => {
           onTileClick(4);
         }}
@@ -46,6 +51,7 @@ function Board({ tiles, onTileClick }) {
         className="right-border bottom-border "
       />
       <Tile
+        playerTurn={playerTurn}
         onClick={() => {
           onTileClick(5);
         }}
@@ -53,6 +59,7 @@ function Board({ tiles, onTileClick }) {
         className="bottom-border "
       />
       <Tile
+        playerTurn={playerTurn}
         onClick={() => {
           onTileClick(6);
         }}
@@ -60,6 +67,7 @@ function Board({ tiles, onTileClick }) {
         className="right-border  "
       />
       <Tile
+        playerTurn={playerTurn}
         onClick={() => {
           onTileClick(7);
         }}
@@ -67,6 +75,7 @@ function Board({ tiles, onTileClick }) {
         className="right-border  "
       />
       <Tile
+        playerTurn={playerTurn}
         onClick={() => {
           onTileClick(8);
         }}
